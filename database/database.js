@@ -1,9 +1,12 @@
 const Sequelize = require('sequelize');
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const connection = new Sequelize(
-    'livro',
+    'bd_programa_igreja',
     'root',
-    'tirnanog',
+    '',
     {
         host: 'localhost',
         dialect: 'mysql',

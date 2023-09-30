@@ -3,11 +3,17 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 const connection = require('./database/database');
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 // Setup do ambiente
 // View engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+
+
+app.use(cors())
 
 // Sessions
 app.use(session({
@@ -37,15 +43,16 @@ app.use(express.urlencoded({ extended: false }));
 
 // Models
 const Usuario = require('./models/usuario');
-const Genero = require('./models/genero');
-const Editora = require('./models/editora');
-const Autor = require('./models/autor');
-const Livro = require('./models/livro');
+const Caixa = require('./models/caixa');
+const Festa = require('./models/festa');
+const Produto = require('./models/produto');
+const Venda = require('./models/venda');
+const Venda_Produto = require('./models/venda_produto');
 
-// Controllers
-// TODO
+// importar rotas
+const usuarioRoute = require('./routes/usuarioRoute');
 
-// Rotas
-// TODO
+//Rotas
+app.use("/", usuarioRoute)
 
 module.exports = app;

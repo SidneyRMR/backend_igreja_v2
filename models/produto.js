@@ -3,30 +3,34 @@ const connection = require('../database/database');
 
 const Festa = require('./festa');
 
-const Usuario = connection.define(
-    'usuario',
+const Produto = connection.define(
+    'produto',
     {
         nome: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        login: {
+        preco: {
+            type: Sequelize.DECIMAL(10,2),
+            allowNull: false
+        },
+        medida: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        senha: {
+        tipo: {
             type: Sequelize.STRING,
             allowNull: false
         },
-        administrador: {
-            type: Sequelize.BOOLEAN,
+        ativo: {
+            type: Sequelize.BOOLEAN, 
             allowNull: false
         }
     }
 );
-// FK FESTA
-Usuario.belongsTo(Festa);
+//FK FESTA
+Produto.belongsTo(Festa);
 
-// Usuario.sync({force: true});
+// Produto.sync({force: true});
 
-module.exports = Usuario;
+module.exports = Produto;
