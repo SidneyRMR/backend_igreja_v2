@@ -18,6 +18,10 @@ const Produto = connection.define(
             type: Sequelize.STRING,
             allowNull: false
         },
+        estoque: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
         tipo: {
             type: Sequelize.STRING,
             allowNull: false

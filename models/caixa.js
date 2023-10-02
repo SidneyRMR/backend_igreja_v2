@@ -18,10 +18,10 @@ const Caixa = connection.define(
         }
     }
 );
-// FK FESTA
-Caixa.belongsTo(Festa);
-// FK USUARIO
+// // FK USUARIO 
 Caixa.belongsTo(Usuario);
+// FK FESTA 
+Caixa.belongsTo(Festa);
 
 // Caixa.sync({force: true});
 

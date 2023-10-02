@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const connection = require('../database/database');
 
-const Festa = require('./festa');
 const Produto = require('./produto');
 const Venda = require('./venda');
 
@@ -27,8 +26,6 @@ const Venda_Produto = connection.define(
     }
 );
 // FK PRODUTO
-Venda_Produto.belongsTo(Festa);
-// FK FESTA
 Venda_Produto.belongsTo(Produto);
 // FK VENDA
 Venda_Produto.belongsTo(Venda);

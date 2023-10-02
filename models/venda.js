@@ -26,8 +26,6 @@ const Venda = connection.define(
         }
     }
 );
-// FK FESTA
-Venda.belongsTo(Festa);
 // FK CAIXA
 Venda.belongsTo(Caixa);
 // FK USUARIO
